@@ -1,0 +1,417 @@
+@charset "UTF-8";
+
+@import url(https://fonts.googleapis.com/css?family=Open+Sans:400);
+
+body {
+    background-color: #121212;
+    color: aliceblue;
+	  background-size: cover;
+    padding-top:50px;
+}
+
+h1 {
+  text-align: center;
+}
+
+.setflex {
+    display: flex;
+}
+
+.vl {
+  margin-top: 30px;
+  border-left: 3px solid rgb(255, 255, 255);
+  height: 500px;
+}
+
+form {
+    margin-left:100px;
+    margin-right:100px;
+    margin-top: 70px;
+    width: 343px;
+    height: 370px;
+    padding:30px;
+    border: 1px solid rgba(0,0,0,.2);
+    border-radius: 5px;
+    background-clip: padding-box;
+    background: rgba(0, 0, 0, 0.5); 
+    overflow: hidden; 
+}
+
+textarea{
+	  background: rgba(255, 255, 255, 0.4); 
+    width: 276px;
+    height: 110px;
+    border: 1px solid rgba(255,255,255,.6);
+    border-radius: 4px;
+    background-clip: padding-box; 
+    display:block;
+    font-family: 'Source Sans Pro', sans-serif;
+    font-size:18px;
+    color:#fff;
+    padding-left:45px;
+    padding-right:20px;
+    padding-top:12px;
+    margin-bottom:20px;
+    overflow:hidden;
+}
+
+input {
+    width: 276px;
+    height: 48px;
+    border: 1px solid rgba(255,255,255,.4);
+    border-radius: 4px;
+    background-clip: padding-box; 
+    display:block;
+    font-family: 'Source Sans Pro', sans-serif;
+    font-size:18px;
+    color:#fff;
+    padding-left:20px;
+    padding-right:20px;
+    margin-bottom:20px;
+}
+
+input[type=submit] {
+    cursor:pointer;
+}
+
+input.subject {
+	  background: rgba(255, 255, 255, 0.4); 
+	  padding-left:45px;
+}
+
+input.email {
+	  background: rgba(255, 255, 255, 0.4);
+	  padding-left:45px;
+}
+
+input.message {
+	  background: rgba(255, 255, 255, 0.4);
+	  padding-left:45px;
+}
+
+::-webkit-input-placeholder {
+	  color: #fff;
+}
+
+:-moz-placeholder{ 
+    color: #fff; 
+}
+
+::-moz-placeholder {
+    color: #fff;
+}
+
+:-ms-input-placeholder {  
+	  color: #fff; 
+}
+
+input:focus, textarea:focus { 
+	  background-color: rgba(0, 0, 0, 0.2);
+    box-shadow: 0 0 5px 1px rgba(255,255,255,.5);
+	  overflow: hidden; 
+}
+
+.btn {
+	  width: 138px;
+	  height: 44px;
+	  border-radius: 4px;
+	  float:right;
+    border: 1px solid #253737;
+    background: #416b68;
+    padding: 10.5px 21px;
+    border-radius: 6px;
+    color: #e1e1e1;
+}
+
+.btn:hover {
+    border: 1px solid #253737;
+    text-shadow: #333333 0 1px 0;
+    background: #416b68;
+    color: #fff;
+ }
+
+.btn:active {
+    margin-top:1px;
+    text-shadow: #333333 0 -1px 0;
+    border: 1px solid #253737;
+    background: #6da5a3;
+    color: #fff;
+   }
+
+
+
+   * {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+  }
+  
+  :root {
+    --dialog-border-radius: 20px;
+    --dialog-padding: 20px;
+  }
+  
+  .file-container {
+    font-family: sans-serif;
+    font-size: 13pt;
+    color: aliceblue;
+  }
+
+  .file-container .file-wrapper {
+    position: absolute;
+    display: block;
+    width: 300px;
+    height: 100px;
+    top: 200px;
+    left: 100px;
+    max-height: 400px;
+    min-height: 300px;
+    margin: auto;
+    background-color: #303030;
+    border-radius: var(--dialog-border-radius);
+    padding: var(--dialog-padding);
+  }
+  .file-container .file-wrapper .file-input {
+    position: absolute;
+    width: 100%;
+    height: 100%;
+    top: 0;
+    right: 0;
+    bottom: 0;
+    left: 0;
+    background-color: #000;
+    z-index: 10;
+    cursor: pointer;
+    opacity: 0;
+  }
+  .file-container .file-wrapper .file-input--active + .file-content {
+    background: #2f2f2f;
+  }
+  .file-container .file-wrapper .file-input--active + .file-content .file-icon {
+    opacity: 0.5;
+  }
+  .file-container .file-wrapper .file-input--active + .file-content .file-icon i {
+    animation-name: bounce;
+    animation-duration: 0.6s;
+    animation-iteration-count: infinite;
+    animation-timing-function: ease;
+  }
+  .file-container .file-wrapper .file-input--active + .file-content .file-icon .icon-shadow {
+    animation-name: shrink;
+    animation-duration: 0.6s;
+    animation-iteration-count: infinite;
+  }
+  .file-container .file-wrapper .file-content {
+    position: relative;
+    display: block;
+    width: 100%;
+    height: 100%;
+    border: 8px dashed rgba(73, 80, 87, .6);
+    border-radius: var(--dialog-border-radius);
+    transition: 0.2s;
+  }
+  .file-container .file-wrapper .file-content .file-infos {
+    position: absolute;
+    display: flex;
+    width: 50%;
+    height: 50%;
+    min-width: 200px;
+    min-height: 202px;
+    top: 0;
+    right: 0;
+    bottom: 0;
+    left: 0;
+    margin: auto;
+    flex-direction: column;
+    justify-content: center;
+  }
+  .file-container .file-wrapper .file-content .file-infos .file-icon {
+    position: relative;
+    width: 100%;
+    height: 100%;
+    margin: 0;
+    color: aliceblue;
+    background-color: #3c3c3c;
+    border-radius: var(--dialog-border-radius);
+    padding: var(--dialog-padding);
+    box-shadow: inset 0px 0px 6px 0px #ccc;
+    transition: 0.2s;
+  }
+  .file-container .file-wrapper .file-content .file-infos .file-icon i {
+    margin-bottom: 20px;
+    width: 100%;
+  }
+  .file-container .file-wrapper .file-content .file-infos .file-icon .icon-shadow {
+    position: relative;
+    display: block;
+    width: 95px;
+    height: 7px;
+    border-radius: 100%;
+    background-color: #e3e5e8;
+    top: -17px;
+    margin-left: auto;
+    margin-right: auto;
+  }
+  .file-container .file-wrapper .file-content .file-infos .file-icon > span {
+    position: absolute;
+    bottom: var(--dialog-padding);
+    width: calc(100% - var(--dialog-padding) * 2);
+  }
+  .file-container .file-wrapper .file-content .file-infos .file-icon > span span {
+    display: none;
+  }
+  .file-container .file-wrapper .file-content .file-infos .file-icon > span .has-drag {
+    display: inline;
+  }
+  .file-container .file-wrapper .file-content .file-infos .file-icon i, .file-container .file-wrapper .file-content .file-infos .file-icon span {
+    display: block;
+    text-align: center;
+    text-transform: uppercase;
+    font-weight: bold;
+  }
+  .file-container .file-wrapper .file-content .file-name {
+    padding: 5px;
+    position: absolute;
+    width: 100%;
+    text-align: middle;
+    left: 0;
+    bottom: var(--dialog-padding);
+    right: 0;
+    font-size: 12pt;
+    margin: auto;
+    text-align: center;
+  }
+  
+  @keyframes bounce {
+    0% {
+      transform: translateY(0px);
+    }
+    50% {
+      transform: translateY(-15px);
+    }
+    100% {
+      transform: translateY(0px);
+    }
+  }
+  @keyframes shrink {
+    0% {
+      width: 95px;
+    }
+    50% {
+      width: 75px;
+    }
+    100% {
+      width: 95px;
+    }
+  }
+
+#popup-button {
+  background-color: rgba(71, 169, 255, 0.429);
+  border: none;
+  border-radius: 20px;
+  color: aliceblue;
+  text-decoration: none;
+  cursor: pointer;
+  padding: 20px;
+  margin: 0;
+  font-size: inherit;
+}
+
+#popup-button2 {
+  background-color: rgba(71, 169, 255, 0.429);
+  border: none;
+  border-radius: 20px;
+  color: aliceblue;
+  text-decoration: none;
+  cursor: pointer;
+  padding: 20px;
+  margin: 0;
+  font-size: inherit;
+}
+
+.btnv {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  height: 200px;
+}
+
+.btni {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  height: 200px;
+}
+
+#overlay {
+  display: none;
+  position: fixed;
+  top: -200px;
+  left: 1100px;
+  width: 100%;
+  height: 100%;
+  align-items: center;
+  z-index: 1;
+}
+
+#overlay2 {
+  display: none;
+  position: fixed;
+  top: 200px;
+  left: 1100px;
+  width: 100%;
+  height: 100%;
+  align-items: center;
+  z-index: 1;
+}
+
+#popup-container {
+    background-color: #242424;
+    padding: 20px;
+    border-radius: 5px;
+}
+
+#popup-container2 {
+  background-color: #242424;
+  padding: 20px;
+  border-radius: 5px;
+}
+
+ul {
+    list-style-type: none;
+    padding: 20px;
+}
+
+li {
+    display: flex;
+}
+
+.scrollable-list {
+  max-height: 300px;
+  overflow-y: auto;
+  overflow-x: hidden;
+}
+
+::-webkit-scrollbar {
+  width: 8px;
+}
+
+::-webkit-scrollbar-thumb {
+  background-color: rgba(255, 255, 255, 0.5);
+}
+::-webkit-scrollbar-thumb:window-inactive {
+  background-color: rgba(255, 255, 255, 0.5);
+}
+::-webkit-scrollbar-thumb:hover {
+  background-color: white;
+}
+
+::-webkit-scrollbar-track,
+::-webkit-scrollbar-thumb {
+  -webkit-box-shadow: black;
+  -webkit-transition: all 300ms ease-in-out;
+}
+
+::-webkit-scrollbar-track {
+  background-color: rgba(255, 255, 255, 0.2);
+}

@@ -1,0 +1,76 @@
+<!DOCTYPE html>
+<html lang="en">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+<script src="https://code.jquery.com/jquery-3.6.0.min.js"></script>
+<script src="https://kit.fontawesome.com/069e84380e.js" crossorigin="anonymous"></script>
+<head>
+    <title>Mass Email Dispatcher</title>
+
+    <script src="https://cdn.emailjs.com/dist/email.min.js"></script>
+    <link rel="stylesheet" href="./CSS.css">
+</head>
+<body>
+
+    <h1>Mass Email Dispatcher</h1>
+
+    <div class="setflex">
+        <div class="file-container">
+            <div class="file-wrapper">
+                <input class="file-input" id="js-file-input" type="file" />
+                <div class="file-content">
+                    <div class="file-infos">
+                        <p class="file-icon"><i class="fas fa-file-upload fa-7x"></i><span style="font-size: 10px; margin:7px">Click to browse<span class="has-drag"> or drop file here</span></span></p>
+                    </div>
+                    <p class="file-name" id="js-file-name">No file selected</p>
+                </div>
+            </div>
+        </div>
+
+        <div style="padding: 250px;"></div>
+        <div class="vl"></div>
+
+        <form onsubmit="sendEmail(); return false;">
+            <input id="email" placeholder="Enter your name" class="email" type="name" required />
+            <input id="subject" placeholder="Enter the subject" class="subject" required />
+            <textarea rows="4" cols="50" placeholder="Enter your message" class="message" id="msg" required></textarea>
+            <input name="submit" class="btn" type="submit" value="Dispatch" />
+        </form>
+
+        <div class="vl"></div>
+
+        <div style="padding-top: 50px; padding-left: 100px;">
+            <div class="btnv">
+                <button id="popup-button">View Valid Emails</button>
+            </div>
+            <div id="overlay">
+                <div id="popup-container">
+                    <span class="close-button" onclick="closePopup1()">&#10006;</span>
+                    <ul id="valid-email-list" class="scrollable-list">
+                        <table id="val">
+                            <div id="valCount"></div>
+                        </table>
+                    </ul>
+                </div>
+            </div>
+            <div class="btni">
+                <button id="popup-button2">View Invalid Emails</button>
+            </div>
+            <div id="overlay2">
+                <div id="popup-container2">
+                    <span class="close-button" onclick="closePopup2()">&#10006;</span>
+                    <ul id="invalid-email-list" class="scrollable-list">
+                        <table id="inval">
+                            <div id="invalCount"></div>
+                        </table>
+                    </ul>
+                </div>
+            </div>
+        </div>
+        <div style="padding: 50px;"></div>
+    </div>
+
+    <script src="./JS.js"></script>
+
+</body>
+</html>
